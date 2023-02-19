@@ -137,6 +137,12 @@ target_link_libraries(vcss
  ${PCL_LIBRARIES}
 )
 
+add_executable(pcd_read src/i_o_sample/pcd_read.cpp)
+target_link_libraries(pcd_read
+ ${catkin_LIBRARIES}
+ ${PCL_LIBRARIES}
+)
+
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
