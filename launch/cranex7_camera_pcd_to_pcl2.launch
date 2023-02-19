@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+    <!-- access pcd file path -->
+    <arg name="file_name" value="/home/qua/catkin_ws/src/pcl_sample_code/pcd_samples/crane_x7_table_objects/crane_x7_d435_2023-02-19-1534.pcd" />
+
+    <!-- publish rate:10hz -->
+    <arg name="rate" value="0.1" />
+
+    <!-- launch pcl node for conversing PointCloud2 to .pcd -->
+    <node pkg="pcl_ros" type="pointcloud_to_pcd" name="pcd_to_pointcloud" output="screen">
+        <remap from="cloud_pcd" to="crane_x7_d435_objects" /> 
+        <param name="frame_id" value="map"/>
+    </node>
+
+    <node pkg="rviz" type="rviz" name="rviz" />
+</launch>

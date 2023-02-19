@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<launch>
+    <!-- change pose for cranex7 -->
+    <!-- <node name="my_pose" pkg="crane_x7_examples" type="prepare_to_tackle_cluttered_scene.py" /> -->
+
+    <!-- launch Realsense -->
+    <!--include file="$(find realsense2_camera)/launch/rs_rgbd.launch" /> -->
+
+    <!-- launch pcl node for conversing PointCloud2 to .pcd -->
+    <node pkg="pcl_ros" type="pointcloud_to_pcd" name="pointcloud_to_pcd" output="screen">
+        <remap from="input" to="/camera/depth_registered/points" /> 
+        <param name="prefix" value="/home/qua/catkin_ws/src/pcl_sample_code/pcd_samples/crane_x7_d435_"/>
+        <param name="fixed_frame" value="camera_depth_optical_frame" /> 
+        <param name="binary" value="false"/>
+        <param name="compressed" value="false"/>
+    </node>
+</launch>
