@@ -5,7 +5,7 @@
     <!-- <node name="my_pose" pkg="crane_x7_examples" type="prepare_to_tackle_cluttered_scene.py" /> -->
 
     <!-- launch Realsense -->
-    <!--include file="$(find realsense2_camera)/launch/rs_rgbd.launch" /> -->
+    <include file="$(find realsense2_camera)/launch/rs_rgbd.launch" /> -->
 
     <!-- launch pcl node for conversing PointCloud2 to .pcd -->
     <node pkg="pcl_ros" type="pointcloud_to_pcd" name="pointcloud_to_pcd" output="screen">
